@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Firdaus - Web Developer</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        line-height: 1.6;
+      }
+
+      .nav {
+        border-bottom: 1px solid purple;
+        padding: 10px 0;
+      }
+
+      .nav a {
+        color: purple;
+        text-decoration: none;
+        margin-right: 10px;
+        cursor: pointer;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .page {
+        display: none;
+      }
+
+      .page.active {
+        display: block;
+      }
+
+      /* Home page styles */
+      .home-content {
+        text-align: center;
+      }
+
+      .avatar-img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin: 20px 0;
+      }
+
+      .name {
+        font-size: 24px;
+        font-weight: bold;
+        margin: 10px 0;
+      }
+
+      .title {
+        color: #666;
+        margin-bottom: 20px;
+      }
+
+      .overview {
+        text-align: center;
+        margin: 20px 0;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+      }
+
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: left;
+      }
+
+      th {
+        background-color: #f5f5f5;
+      }
+
+      /* Contact page styles */
+      .page-title {
+        font-size: 28px;
+        margin: 20px 0;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 10px;
+      }
+
+      /* About page styles */
+      .about-content {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      .about-text {
+        margin-bottom: 15px;
+        line-height: 1.8;
+      }
+
+      footer {
+        text-align: center;
+        margin-top: 40px;
+        color: #666;
+        border-top: 1px solid #ddd;
+        padding-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <nav class="nav">
+        <a onclick="showPage('home')">Home</a> |
+        <a onclick="showPage('contact')">Contact</a> |
+        <a onclick="showPage('about')">About me</a>
+      </nav>
+
+      <div id="home" class="page active">
+        <div class="home-content">
+          <img src="avatar.jpg" alt="Firdaus" class="avatar-img" />
+          <h1 class="name">Muhammad Firdaus Annafiah</h1>
+          <div class="title">(Web Developer)</div>
+
+          <section class="overview">
+            <h2>Overview</h2>
+            <p>
+              Hi, saya adalah web developer yang berdomisili di Karawang. Saat
+              ini sedang belajar HTML.
+            </p>
+          </section>
+
+          <table>
+            <tr>
+              <th>Skill</th>
+              <th>Pengalaman</th>
+            </tr>
+            <tr>
+              <td>
+                <ul>
+                  <li>HTML (Expert)</li>
+                  <li>CSS (Beginner)</li>
+                  <li>Javascript (Beginner)</li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>Freelancer di Internet</li>
+                  <li>Leader Local Linux Community</li>
+                  <li>Leader Local Linux Community</li>
+                </ul>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div id="contact" class="page">
+        <h1 class="page-title">Contact Me</h1>
+      </div>
+
+      <div id="about" class="page">
+        <h1 class="page-title">About Me</h1>
+        <div class="about-content">
+          <p class="about-text">
+            Hi, saya adalah web developer yang berdomisili di Karawang. Saat ini
+            sedang belajar HTML.
+          </p>
+          <p class="about-text">
+            Saya memang masih baru dalam web development, karena itu saya tidak
+            akan pernah berhenti belajar.
+          </p>
+          <p class="about-text">
+            Saya ingin menguasai bahasa HTML, CSS, dan Javascript.
+          </p>
+        </div>
+      </div>
+
+      <footer>Copyright © 2025 Firdaus.</footer>
+    </div>
+
+    <script>
+      function showPage(pageId) {
+        // Hide all pages
+        document.querySelectorAll(".page").forEach((page) => {
+          page.classList.remove("active");
+        });
+
+        // Show selected page
+        document.getElementById(pageId).classList.add("active");
+      }
+
+      // Show home page by default
+      document.addEventListener("DOMContentLoaded", function () {
+        showPage("home");
+      });
+    </script>
+  </body>
+</html>
